@@ -6,11 +6,11 @@ import java.net.*;
 // call mockup server at port 8080
 public class MockWebClient {
     public static void main(String[] args) {
-
-        Socket socket = null;
+ try{
+       
          // TODO: Create a socket to connect to the web server on port 8080
-        try{
-        socket = new Socket("localhost", 8080);
+       
+        Socket socket = new Socket("localhost", 8080);
         
         // TODO: Create input and output streams for the socket
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);

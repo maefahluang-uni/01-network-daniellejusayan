@@ -15,7 +15,8 @@ public class MockWebServer implements Runnable {
     public void run() {
 
         // TODO Create a server socket bound to specified port
-        try (ServerSocket serverSocket = new ServerSocket(port)) {
+        try{
+            ServerSocket serverSocket = new ServerSocket(port); 
             System.out.println("Mock Web Server running on port " + port + "...");
 
         while (true) {
@@ -28,15 +29,17 @@ public class MockWebServer implements Runnable {
             
 
             // TODO: Read the request from the client using BufferedReader
-             String requestLine;
-             while((requestLine = in.readLine()) != null && !requestLine.isEmpty()){
-                System.out.println("Received request: " + requestLine);
+             String requestLine = in.readLine();
+             System.out.println("Received request: " + requestLine);
+
                 
             // TODO: send a response to the client
-            String response = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n"
-                    + "<html><body>Hello, Web! on Port " + port + "</body></html>";
+            String response = "HTTP/1.1 200 OK\r\n" +
+                  "Content-Type: text/html\r\n\r\n" +
+                  "<html><body>Hello, Web! on Port " + port + "</body></html>";
+
                 out.println(response);
-             }
+             
     
             // TODO: Close the client socket
             clientSocket.close();
