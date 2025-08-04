@@ -54,7 +54,7 @@ Think about the following,  modify the code to experiment it and put your though
 ```
 1. You can pass different port numbers when creating new objects
 2. By creating more Thread objects
-3. You can modify the HTML strings.
+3. You can modify the HTML strings
 4. Load balancing by running multiple instances and handle different types of requests.
 ```
 **Please push the code back to Github to submit this lab**

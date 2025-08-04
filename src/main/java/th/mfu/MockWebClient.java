@@ -8,8 +8,8 @@ public class MockWebClient {
     public static void main(String[] args) {
 
         Socket socket = null;
+         // TODO: Create a socket to connect to the web server on port 8080
         try{
-        // TODO: Create a socket to connect to the web server on port 8080
         socket = new Socket("localhost", 8080);
         
         // TODO: Create input and output streams for the socket
